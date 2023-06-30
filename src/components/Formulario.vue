@@ -7,6 +7,18 @@ export default defineComponent({
   components: {
     Temporizador
   },
+  data() {
+    return {
+      descricao: ""
+    }
+  },
+  methods: {
+    finalizarTarefa(tempoDecorrido: number): void {
+      console.log('tempo da tarefa', tempoDecorrido);
+      console.log('descrição da tarefa', this.descricao);
+      this.descricao = "";
+    }
+  }
 });
 </script>
 
@@ -25,7 +37,7 @@ export default defineComponent({
         />
       </div>
       <div class="column">
-        <Temporizador />
+        <Temporizador @ao-temporizador-finalizado="finalizarTarefa"/>
       </div>
     </div>
   </div>
