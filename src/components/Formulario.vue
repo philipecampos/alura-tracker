@@ -16,7 +16,7 @@ export default defineComponent({
   methods: {
     finalizarTarefa(tempoDecorrido: number): void {
       this.$emit('ao-salvar-tarefa', {
-        tempo: tempoDecorrido,
+        duracaoEmSegundos: tempoDecorrido,
         descricao: this.descricao
       });
       this.descricao = "";
